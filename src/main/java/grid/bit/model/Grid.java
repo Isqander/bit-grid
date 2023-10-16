@@ -29,7 +29,7 @@ public class Grid extends AbstractEntity<Long> {
     }
 
     @OrderBy("number")
-    @OneToMany(mappedBy = "grid")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "grid")
     public List<GridColumn> getColumns() {
         return columns;
     }
@@ -39,7 +39,7 @@ public class Grid extends AbstractEntity<Long> {
     }
 
     @OrderBy("number")
-    @OneToMany(mappedBy = "grid")
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "grid")
     public List<GridRow> getRows() {
         return rows;
     }

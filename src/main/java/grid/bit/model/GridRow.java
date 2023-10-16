@@ -1,15 +1,14 @@
 package grid.bit.model;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "grid_row")
 public class GridRow extends AbstractEntity<Long> {
     private int number;
     private Grid grid;
+    private List<GridCell> cells;
 
     public int getNumber() {
         return number;
@@ -27,5 +26,15 @@ public class GridRow extends AbstractEntity<Long> {
 
     public void setGrid(Grid grid) {
         this.grid = grid;
+    }
+
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "gridRow")
+    public List<GridCell> getCells() {
+        return cells;
+    }
+
+    public void setCells(List<GridCell> cells) {
+        this.cells = cells;
     }
 }
