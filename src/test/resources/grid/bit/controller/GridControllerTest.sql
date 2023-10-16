@@ -13,4 +13,4 @@ INSERT INTO grid_row(id, number, grid_id) VALUES
   (555000555102, 2, 55500055520);
 
 INSERT INTO grid_cell(grid_column_id, grid_row_id, value) VALUES
-  (55500055552, 55500055551, '11010');
+  (55500055552, 55500055551, 26);
